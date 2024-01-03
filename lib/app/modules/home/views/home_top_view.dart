@@ -56,20 +56,15 @@ class HomeTopWidgetView extends GetView<HomeController> {
           Gap(Get.height * 0.01),
           SizedBox(
             height: Get.height * 0.08,
-            child: ListView(
-              shrinkWrap: true,
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              children: List.generate(
-                08,
-                (index) => controller.categoriesData
-                    .map(
-                      (e) => CategoriesWidget(
-                        title: e['title'],
-                        icon: e['icon'],
-                      ),
-                    )
-                    .toList()[index],
-              ),
+              itemCount: controller.categoriesData.length,
+              itemBuilder: (context, index) {
+                return CategoriesWidget(
+                  icon: controller.categoriesData[index]['icon'],
+                  title: controller.categoriesData[index]['title'],
+                );
+              },
             ),
           ),
         ],
