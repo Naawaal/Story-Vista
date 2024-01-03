@@ -12,7 +12,7 @@ class HomeController extends GetxController {
     },
     {
       "title": "Slice of Life",
-      "icon": "assets/icons/hearts.png",
+      "icon": "assets/icons/slice_of_life.png",
     },
     {
       "title": "Romance",
