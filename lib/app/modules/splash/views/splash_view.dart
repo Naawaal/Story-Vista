@@ -13,12 +13,6 @@ class SplashView extends GetView<SplashController> {
         title: const Text('SplashView'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'SplashView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
     );
   }
 }
