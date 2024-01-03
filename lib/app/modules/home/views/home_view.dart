@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/home/views/home_custom_app_bar_view.dart';
@@ -17,18 +18,27 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Column(
         children: [
-          const Expanded(
-            flex: 2,
-            child: HomeTopWidgetView(),
-          ),
+          const HomeTopWidgetView(),
+          Gap(Get.height * 0.01),
           Expanded(
             child: Container(
               width: Get.width,
+              padding: EdgeInsets.symmetric(horizontal: Get.height * 0.009),
               decoration: BoxDecoration(
                 color: Get.theme.colorScheme.surface,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Text('HomeView is working'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Popular',
+                    style: Get.textTheme.bodyMedium!.copyWith(
+                      color: Get.theme.colorScheme.onSurface,
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],
