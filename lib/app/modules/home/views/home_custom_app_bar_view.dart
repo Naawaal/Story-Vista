@@ -8,6 +8,7 @@ class HomeCustomAppBarView extends GetView {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
+      backgroundColor: Get.theme.colorScheme.primary,
       elevation: 0,
       title: Text(
         'Story Vista',
