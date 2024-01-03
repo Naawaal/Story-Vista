@@ -4,6 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/home/views/home_popular_list_widget_view.dart';
 
+import 'home_new_release_list_widget_view.dart';
+
 class HomeBottomView extends GetView {
   const HomeBottomView({Key? key}) : super(key: key);
   @override
@@ -33,6 +35,8 @@ class HomeBottomView extends GetView {
               color: Get.theme.colorScheme.onSurface,
             ),
           ),
+          Gap(Get.height * 0.01),
+          const HomeNewReleaseListWidgetView(),
         ],
       ),
     );
