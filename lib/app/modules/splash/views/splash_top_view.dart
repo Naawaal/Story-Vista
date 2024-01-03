@@ -10,9 +10,7 @@ class SplashTopView extends GetView {
     return Container(
       width: Get.width,
       color: Get.theme.colorScheme.primary,
-      padding: EdgeInsets.symmetric(
-        horizontal: Get.width * 0.1,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: Get.height * 0.009),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -30,9 +28,11 @@ class SplashTopView extends GetView {
           ),
           Gap(Get.height * 0.01),
           Text(
-            "Your portal to limitless stories. Explore, read, and immerse yourself.",
-            style: Get.textTheme.bodyMedium!
-                .copyWith(color: Get.theme.colorScheme.onPrimary),
+            "Your portal to limitless stories. Explore, read, and immerse yourself. Enjoy!",
+            textAlign: TextAlign.center,
+            style: Get.textTheme.bodyMedium!.copyWith(
+              color: Get.theme.colorScheme.onPrimary,
+            ),
           ),
         ],
       ),

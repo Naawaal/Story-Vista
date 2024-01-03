@@ -8,6 +8,7 @@ class SplashButtomView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: Get.height * 0.009),
       width: Get.width,
       color: Colors.transparent,
       child: Column(
