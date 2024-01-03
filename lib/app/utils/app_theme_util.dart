@@ -6,8 +6,9 @@ class AppThemeUtil {
 
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    scaffoldBackgroundColor: AppColorUtil.contrastColor,
-    appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.transparent,
+    ),
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: AppColorUtil.primaryColor,

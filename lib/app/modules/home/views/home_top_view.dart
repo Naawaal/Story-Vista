@@ -44,6 +44,27 @@ class HomeTopWidgetView extends GetView {
           ),
           Gap(Get.height * 0.02),
           const HomeSearchBarWidgetView(),
+          Gap(Get.height * 0.02),
+          Text(
+            'Categories',
+            style: Get.textTheme.labelLarge!.copyWith(
+              color: Get.theme.colorScheme.onPrimary,
+            ),
+          ),
+          Gap(Get.height * 0.01),
+          SizedBox(
+            height: Get.height * 0.05,
+            child: ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              children: List.generate(
+                08,
+                (index) => Chip(
+                  label: Text('Category $index'),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

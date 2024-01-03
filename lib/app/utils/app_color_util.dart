@@ -14,7 +14,7 @@ class AppColorUtil {
     * emphasis. For example, you could use it for buttons, 
     * clickable elements, or important text
   */
-  static const Color primaryColor = Color(0xffBE9FE1);
+  static const Color primaryColor = Color(0xff142850);
 
   /*
     * Static constant variable of type Color
@@ -23,7 +23,7 @@ class AppColorUtil {
     * For example, secondary text, less important buttons, 
     * or as a hover color for interactive elements.
   */
-  static const Color secondaryColor = Color(0xffC9B6E4);
+  static const Color secondaryColor = Color(0xff27496D);
 
   /*
     * #E1CCEC: This is a very light shade. It could be used 
@@ -31,7 +31,7 @@ class AppColorUtil {
     * it as a background color for cards, modals, or sections 
     * of the page.
   */
-  static const backgroundColor = Color(0xFFE1CCEC);
+  static const backgroundColor = Color(0xffffffff);
 
   /*
     * Static constant variable of type Color
@@ -41,7 +41,7 @@ class AppColorUtil {
     * the other colors. For example, the main 
     * background, input fields, or containers.
   */
-  static const contrastColor = Color(0xFFF1F1F6);
+  static const contrastColor = Color(0x000000ff);
 
   /*
     * Static constant variable of type Color
