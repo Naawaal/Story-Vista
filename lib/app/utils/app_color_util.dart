@@ -42,4 +42,42 @@ class AppColorUtil {
     * background, input fields, or containers.
   */
   static const contrastColor = Color(0xFFF1F1F6);
+
+  /*
+    * Static constant variable of type Color
+    * Green color to show success messages
+  */
+  static const sucessColor = Colors.green;
+
+  /*
+    * Static constant variable of type Color
+    * Red color to show error messages
+  */
+  static const errorColor = Colors.red;
+
+  /*
+    * Static constant variable of type Color
+    * Yellow color to show warning messages
+  */
+  static const warningColor = Colors.yellow;
+
+  /*
+    * Static constant variable of type Color
+    * Blue color to show info messages
+  */
+  static const infoColor = Colors.blue;
+
+  /*
+    * Static constant variable of type Color
+    * White color to show text on dark background or
+    * to show text on red background or icon on red background
+  */
+  static const whiteColor = Colors.white;
+
+  /*
+    * Static constant variable of type Color
+    * Black color to show text on light background
+    * or to show text on green background or icon on green background
+  */
+  static const blackColor = Colors.black;
 }
