@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class HomeCustomAppBarView extends GetView {
-  const HomeCustomAppBarView({Key? key}) : super(key: key);
+class HomeCustomAppBarWidgetView extends GetView {
+  const HomeCustomAppBarWidgetView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AppBar(

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
 import 'package:story_vista/app/modules/home/views/home_list_widget_view.dart';
 
-import 'home_search_bar_view.dart';
+import 'home_search_bar_widget_view.dart';
 
 class HomeTopWidgetView extends GetView<HomeController> {
   const HomeTopWidgetView({Key? key}) : super(key: key);
