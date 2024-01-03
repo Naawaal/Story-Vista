@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
+import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
+import 'package:story_vista/app/widgets/categories_widget.dart';
 
 import 'home_search_bar_view.dart';
 
-class HomeTopWidgetView extends GetView {
+class HomeTopWidgetView extends GetView<HomeController> {
   const HomeTopWidgetView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -53,15 +55,20 @@ class HomeTopWidgetView extends GetView {
           ),
           Gap(Get.height * 0.01),
           SizedBox(
-            height: Get.height * 0.05,
+            height: Get.height * 0.08,
             child: ListView(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: List.generate(
                 08,
-                (index) => Chip(
-                  label: Text('Category $index'),
-                ),
+                (index) => controller.categoriesData
+                    .map(
+                      (e) => CategoriesWidget(
+                        title: e['title'],
+                        icon: e['icon'],
+                      ),
+                    )
+                    .toList()[index],
               ),
             ),
           ),
