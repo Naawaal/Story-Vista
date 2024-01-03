@@ -5,8 +5,8 @@ import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
 
 import '../../../widgets/categories_widget.dart';
 
-class HomeListWidgetView extends GetView<HomeController> {
-  const HomeListWidgetView({Key? key}) : super(key: key);
+class HomeCategoryListWidgetView extends GetView<HomeController> {
+  const HomeCategoryListWidgetView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

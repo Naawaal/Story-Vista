@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
-import 'package:story_vista/app/modules/home/views/home_list_widget_view.dart';
+import 'package:story_vista/app/modules/home/views/home_category_list_widget_view.dart';
 
 import 'home_search_bar_widget_view.dart';
 
@@ -56,7 +56,7 @@ class HomeTopWidgetView extends GetView<HomeController> {
           Gap(Get.height * 0.01),
           SizedBox(
             height: Get.height * 0.08,
-            child: const HomeListWidgetView(),
+            child: const HomeCategoryListWidgetView(),
           ),
           Gap(Get.height * 0.01),
         ],
