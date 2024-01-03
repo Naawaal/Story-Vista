@@ -7,5 +7,6 @@ class AppThemeUtil {
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     colorSchemeSeed: AppColorUtil.primaryColor,
+    fontFamily: 'Poppins',
   );
 }
