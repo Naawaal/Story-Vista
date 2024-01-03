@@ -45,7 +45,7 @@ class SnackBarUtil {
           horizontal: 05,
           vertical: 10,
         ),
-        colorText: AppColorUtil.blackColor,
+        colorText: Get.theme.colorScheme.onPrimary,
         snackStyle: SnackStyle.FLOATING,
         snackPosition: SnackPosition.BOTTOM,
         icon: const Icon(
@@ -70,27 +70,11 @@ class SnackBarUtil {
           horizontal: 05,
           vertical: 10,
         ),
-        colorText: AppColorUtil.whiteColor,
+        colorText: Get.theme.colorScheme.onError,
         snackStyle: SnackStyle.FLOATING,
         snackPosition: SnackPosition.BOTTOM,
         icon: const Icon(Icons.error_outline, color: AppColorUtil.whiteColor),
-        backgroundColor: AppColorUtil.errorColor,
-        duration: 2.seconds,
-      );
-
-  static showWarningSnackBar(String message) => Get.snackbar(
-        "Warning",
-        message,
-        borderRadius: 06,
-        margin: const EdgeInsets.symmetric(
-          horizontal: 05,
-          vertical: 10,
-        ),
-        colorText: AppColorUtil.blackColor,
-        snackStyle: SnackStyle.FLOATING,
-        snackPosition: SnackPosition.BOTTOM,
-        icon: const Icon(Icons.warning, color: AppColorUtil.whiteColor),
-        backgroundColor: AppColorUtil.warningColor,
+        backgroundColor: Get.theme.colorScheme.error,
         duration: 2.seconds,
       );
 }
