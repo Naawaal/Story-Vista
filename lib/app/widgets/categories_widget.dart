@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CategoriesWidget extends StatelessWidget {
   final String icon, title;
@@ -15,6 +16,8 @@ class CategoriesWidget extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       elevation: 02,
       label: Text(title),
+    ).marginSymmetric(
+      horizontal: Get.height * 0.005,
     );
   }
 }

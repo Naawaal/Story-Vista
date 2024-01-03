@@ -54,10 +54,7 @@ class HomeTopWidgetView extends GetView<HomeController> {
             ),
           ),
           Gap(Get.height * 0.01),
-          SizedBox(
-            height: Get.height * 0.08,
-            child: const HomeCategoryListWidgetView(),
-          ),
+          const HomeCategoryListWidgetView(),
           Gap(Get.height * 0.01),
         ],
       ),

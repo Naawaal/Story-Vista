@@ -17,14 +17,19 @@ class HomeView extends GetView<HomeController> {
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: HomeCustomAppBarWidgetView(),
       ),
-      body: Column(
-        children: [
-          const HomeTopWidgetView(),
-          Gap(Get.height * 0.01),
-          const Expanded(
-            child: HomeBottomView(),
-          )
-        ],
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: Get.height,
+          child: Column(
+            children: [
+              const HomeTopWidgetView(),
+              Gap(Get.height * 0.01),
+              const Expanded(
+                child: HomeBottomView(),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -9,15 +9,18 @@ class HomeCategoryListWidgetView extends GetView<HomeController> {
   const HomeCategoryListWidgetView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: controller.categoriesData.length,
-      itemBuilder: (context, index) {
-        return CategoriesWidget(
-          icon: controller.categoriesData[index]['icon'],
-          title: controller.categoriesData[index]['title'],
-        );
-      },
+    return SizedBox(
+      height: Get.height * 0.08,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: controller.categoriesData.length,
+        itemBuilder: (context, index) {
+          return CategoriesWidget(
+            icon: controller.categoriesData[index]['icon'],
+            title: controller.categoriesData[index]['title'],
+          );
+        },
+      ),
     );
   }
 }
