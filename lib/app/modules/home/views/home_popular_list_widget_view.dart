@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
+import 'package:story_vista/app/routes/app_pages.dart';
 
 class HomePopularListWidgetView extends GetView {
   const HomePopularListWidgetView({Key? key}) : super(key: key);
@@ -16,20 +17,23 @@ class HomePopularListWidgetView extends GetView {
         itemBuilder: (context, index) => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: Get.width * 0.41,
-              height: Get.height * 0.25,
-              margin: EdgeInsets.only(right: Get.width * 0.02),
-              decoration: BoxDecoration(
-                color: Get.theme.colorScheme.primary,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Get.theme.colorScheme.primary.withOpacity(0.2),
-                    blurRadius: 09,
-                    offset: const Offset(2, 2),
-                  ),
-                ],
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.BOOK_DETAIL),
+              child: Container(
+                width: Get.width * 0.41,
+                height: Get.height * 0.25,
+                margin: EdgeInsets.only(right: Get.width * 0.02),
+                decoration: BoxDecoration(
+                  color: Get.theme.colorScheme.primary,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Get.theme.colorScheme.primary.withOpacity(0.2),
+                      blurRadius: 09,
+                      offset: const Offset(2, 2),
+                    ),
+                  ],
+                ),
               ),
             ),
             Gap(Get.height * 0.01),
