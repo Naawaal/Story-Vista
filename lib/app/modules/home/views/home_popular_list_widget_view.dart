@@ -17,7 +17,7 @@ class HomePopularListWidgetView extends GetView {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: Get.width * 0.45,
+              width: Get.width * 0.41,
               height: Get.height * 0.25,
               margin: EdgeInsets.only(right: Get.width * 0.02),
               decoration: BoxDecoration(

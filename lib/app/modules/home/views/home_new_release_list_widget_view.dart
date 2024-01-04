@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 
@@ -8,14 +9,14 @@ class HomeNewReleaseListWidgetView extends GetView {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: 08,
         itemBuilder: (context, index) => Container(
-          height: Get.height * 0.2,
           width: Get.width,
-          margin: const EdgeInsets.all(05),
+          padding: const EdgeInsets.all(04),
+          margin: const EdgeInsets.all(04),
           decoration: BoxDecoration(
-            color: Get.theme.colorScheme.primary,
-            borderRadius: BorderRadius.circular(20),
+            color: Get.theme.colorScheme.secondary.withOpacity(0.9),
+            borderRadius: BorderRadius.circular(08),
           ),
           child: Row(
             children: [
@@ -24,8 +25,7 @@ class HomeNewReleaseListWidgetView extends GetView {
                 child: Image.asset(
                   'assets/png/manga.png',
                   fit: BoxFit.contain,
-                  height: Get.height,
-                  width: Get.width * 0.35,
+                  width: Get.width * 0.22,
                 ),
               ),
               Expanded(
@@ -34,24 +34,51 @@ class HomeNewReleaseListWidgetView extends GetView {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Manga Title',
+                      'That Time I Got Reincarnated as a Slime',
                       style: Get.textTheme.bodyMedium!.copyWith(
                         color: Get.theme.colorScheme.onPrimary,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    Gap(Get.height * 0.004),
                     Text(
-                      'Author Name',
+                      'By: Fuse, Mitz Vah',
+                      style: Get.textTheme.labelSmall!.copyWith(
+                        color: Get.theme.colorScheme.onPrimary,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Gap(Get.height * 0.002),
+                    Text(
+                      'Price: Free',
+                      style: Get.textTheme.bodySmall!.copyWith(
+                        color: Colors.green,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Gap(Get.height * 0.002),
+                    Text(
+                      'Release Date: 2021-08-20',
                       style: Get.textTheme.bodySmall!.copyWith(
                         color: Get.theme.colorScheme.onPrimary,
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    Text(
-                      'Genre',
-                      style: Get.textTheme.bodySmall!.copyWith(
-                        color: Get.theme.colorScheme.onPrimary,
-                      ),
+                    Gap(Get.height * 0.002),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 16,
+                        ),
+                        const Gap(2),
+                        Text(
+                          '4.5',
+                          style: Get.textTheme.bodySmall!.copyWith(
+                            color: Get.theme.colorScheme.onPrimary,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
