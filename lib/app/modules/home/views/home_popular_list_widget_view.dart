@@ -8,7 +8,7 @@ class HomePopularListWidgetView extends GetView {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.height * 0.32,
+      height: Get.height * 0.3,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,

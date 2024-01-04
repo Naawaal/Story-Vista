@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/book_detail/bindings/book_detail_binding.dart';
+import '../modules/book_detail/views/book_detail_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -22,6 +24,11 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOOK_DETAIL,
+      page: () => const BookDetailView(),
+      binding: BookDetailBinding(),
     ),
   ];
 }

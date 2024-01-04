@@ -28,7 +28,6 @@ class HomeBottomView extends GetView {
           ),
           Gap(Get.height * 0.01),
           const HomePopularListWidgetView(),
-          Gap(Get.height * 0.01),
           Text(
             'New Releases',
             style: Get.textTheme.bodyMedium!.copyWith(
