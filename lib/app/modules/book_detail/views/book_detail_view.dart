@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
-import 'package:story_vista/app/modules/book_detail/views/book_custom_app_bar_widget_view.dart';
+import 'package:story_vista/app/modules/book_detail/views/book_detail_custom_app_bar_widget_view.dart';
 import 'package:story_vista/app/modules/book_detail/views/book_detail_header_widget_view.dart';
+import 'package:story_vista/app/routes/app_pages.dart';
 import 'package:story_vista/app/widgets/button_widget.dart';
 
 import '../controllers/book_detail_controller.dart';
@@ -14,8 +15,9 @@ class BookDetailView extends GetView<BookDetailController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
-          child: BookCustomAppBarWidgetView()),
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: BookDetailCustomAppBarWidgetView(),
+      ),
       body: Column(
         children: [
           const BookDetailHeaderWidgetView(),
@@ -68,7 +70,12 @@ class BookDetailView extends GetView<BookDetailController> {
       ),
       bottomNavigationBar: Row(
         children: [
-          Expanded(child: ButtonWidget(text: 'Read Now', onPressed: () {})),
+          Expanded(
+            child: ButtonWidget(
+              text: 'Read Now',
+              onPressed: () => Get.toNamed(Routes.BOOK_VIEWER),
+            ),
+          ),
           Expanded(child: ButtonWidget(text: 'Play Audio', onPressed: () {})),
         ],
       ),
