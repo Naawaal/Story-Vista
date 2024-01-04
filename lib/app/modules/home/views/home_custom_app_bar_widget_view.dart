@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+
 class HomeCustomAppBarWidgetView extends GetView {
   const HomeCustomAppBarWidgetView({Key? key}) : super(key: key);
   @override
@@ -23,7 +25,7 @@ class HomeCustomAppBarWidgetView extends GetView {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () => Get.toNamed(Routes.PROFILE),
           icon: Icon(
             Icons.person,
             color: Get.theme.colorScheme.onPrimary,
