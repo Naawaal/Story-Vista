@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -14,6 +15,11 @@ class ProfileServices {
     * This is the instance of FirebaseAuth.
   */
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  /*
+    * This is the instance of Cloud Firestore.
+  */
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   /*
     * This is the instance of Cloud Storage.
@@ -72,7 +78,7 @@ class ProfileServices {
   /*
     * This method is used upload data to firestore database
   */
-  Future<BookModel> uploadData({
+  Future<BookModel> uploadBookData({
     required String id,
     required String bookTitle,
     required String authorName,
@@ -100,6 +106,8 @@ class ProfileServices {
         category: 'Isekai',
         year: DateTime.now().year,
       );
+      await _firestore.collection('Books').doc(id).set(bookData.toJson());
+      return bookData;
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while uploading data');
     }

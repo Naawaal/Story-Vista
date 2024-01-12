@@ -36,7 +36,7 @@ class ProfileView extends GetView<ProfileController> {
             child: const Text('Cancel'),
           ),
           confirm: TextButton(
-            onPressed: () async {},
+            onPressed: () async => controller.validateBookData(),
             child: const Text('Upload'),
           ),
           title: 'Upload Book',
