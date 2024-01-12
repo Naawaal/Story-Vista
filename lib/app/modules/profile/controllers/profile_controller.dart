@@ -101,7 +101,6 @@ class ProfileController extends GetxController {
         language: languageController.text,
         pages: pagesController.text,
         audioLength: audioLengthController.text,
-        bookUrl: pdfPath.value,
       );
       SnackBarUtil.showSuccessSnackBar('Book uploaded successfully');
       bookTitleController.clear();

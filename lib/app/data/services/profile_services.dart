@@ -27,6 +27,16 @@ class ProfileServices {
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
   /*
+    * This variable is used to store imageUrl
+  */
+  late String? imageUrl;
+
+  /*
+    * This variable is used to store pdfUrl
+  */
+  late String? pdfUrl;
+
+  /*
     * This method is used to pick image from gallery
   */
   Future<String?> pickImage() async {
@@ -37,7 +47,7 @@ class ProfileServices {
         imageQuality: 50,
       );
       if (pickedImage != null) {
-        uploadImage(File(pickedImage.path));
+        imageUrl = await uploadImage(File(pickedImage.path));
         return pickedImage.path;
       } else {
         SnackBarUtil.showErrorSnackBar('No image selected');
@@ -61,7 +71,7 @@ class ProfileServices {
       if (result != null) {
         File file = File(result.files.first.path!);
         if (file.existsSync()) {
-          final pdfUrl = uploadPdf(file);
+          pdfUrl = await uploadPdf(file);
           return pdfUrl.toString();
         } else {
           SnackBarUtil.showErrorSnackBar('No pdf selected');
@@ -87,7 +97,6 @@ class ProfileServices {
     required String language,
     required String pages,
     required String audioLength,
-    required String bookUrl,
   }) async {
     try {
       final bookData = BookModel(
@@ -102,8 +111,9 @@ class ProfileServices {
         aboutAuthor: '',
         audioBook: '',
         audioLen: audioLength,
-        bookUrl: bookUrl,
+        coverUrl: imageUrl,
         category: 'Isekai',
+        pdfUrl: pdfUrl,
         year: DateTime.now().year,
       );
       await _firestore.collection('Books').doc(id).set(bookData.toJson());
@@ -121,7 +131,7 @@ class ProfileServices {
     try {
       const uuid = Uuid();
       final fileName = uuid.v4();
-      final storageRef = _storage.ref().child('Images/$fileName');
+      final storageRef = _storage.ref().child('Images/$fileName.jpg');
       final uploadTask = storageRef.putFile(image);
       final TaskSnapshot taskSnapshot = await uploadTask;
       return await taskSnapshot.ref.getDownloadURL();
@@ -134,16 +144,17 @@ class ProfileServices {
   /*
     * This method is used to upload pdf to firebase storage
   */
-  Future<void> uploadPdf(File pdf) async {
+  Future<String?> uploadPdf(File pdf) async {
     try {
       const uuid = Uuid();
       final fileName = uuid.v4();
-      final storageRef = _storage.ref().child('Pdfs/$fileName');
+      final storageRef = _storage.ref().child('Pdfs/$fileName.pdf');
       final uploadTask = storageRef.putFile(pdf);
       final TaskSnapshot taskSnapshot = await uploadTask;
-      await taskSnapshot.ref.getDownloadURL();
+      return await taskSnapshot.ref.getDownloadURL();
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while uploading pdf');
     }
+    return null;
   }
 }
