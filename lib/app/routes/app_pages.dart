@@ -12,8 +12,6 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
-import '../modules/upload_book/bindings/upload_book_binding.dart';
-import '../modules/upload_book/views/upload_book_view.dart';
 
 part 'app_routes.dart';
 
@@ -65,11 +63,6 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
-    ),
-    GetPage(
-      name: _Paths.UPLOAD_BOOK,
-      page: () => const UploadBookView(),
-      binding: UploadBookBinding(),
     ),
   ];
 }

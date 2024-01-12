@@ -8,8 +8,8 @@ import 'package:story_vista/app/modules/profile/controllers/profile_controller.d
 
 import '../../../components/text_form_filed_component.dart';
 
-class ProfileUploadBookContentView extends GetView<ProfileController> {
-  const ProfileUploadBookContentView({super.key});
+class ProfileAddNewBook extends GetView<ProfileController> {
+  const ProfileAddNewBook({super.key});
   @override
   Widget build(BuildContext context) {
     return Expanded(

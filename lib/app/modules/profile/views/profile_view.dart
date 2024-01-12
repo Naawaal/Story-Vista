@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/profile/views/profile_bottom_view.dart';
 import 'package:story_vista/app/modules/profile/views/profile_top_view.dart';
-import 'package:story_vista/app/modules/profile/views/profile_upload_book_content_view.dart';
+import 'package:story_vista/app/modules/profile/views/profile_add_new_book.dart';
 
 import '../controllers/profile_controller.dart';
 import 'profile_custom_app_bar_widget_view.dart';
@@ -40,7 +40,7 @@ class ProfileView extends GetView<ProfileController> {
             child: const Text('Upload'),
           ),
           title: 'Upload Book',
-          content: const ProfileUploadBookContentView(),
+          content: const ProfileAddNewBook(),
         ),
         child: const Icon(Icons.add),
       ),
