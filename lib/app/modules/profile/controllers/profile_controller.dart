@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:story_vista/app/utils/snack_bar_util.dart';
+import 'package:story_vista/app/data/services/profile_services.dart';
 
 import '../../../data/services/splash_services.dart';
 
@@ -10,6 +9,10 @@ class ProfileController extends GetxController {
     * This is the instance of SplashServices.
   */
   final SplashServices splashServices = SplashServices();
+  /*
+    * This is the instance of ProfileServices.
+  */
+  final ProfileServices profileServices = ProfileServices();
 
   /*
     * TextEditingControllers for Book Title, Author Name, Description, Price, Language, Pages and Audio Length
@@ -23,11 +26,6 @@ class ProfileController extends GetxController {
   final TextEditingController audioLengthController = TextEditingController();
 
   /*
-    * This variable is used to store image picked from gallery
-  */
-  XFile? image;
-
-  /*
     * This variable is used to store image path
   */
   RxString imagePath = ''.obs;
@@ -35,23 +33,8 @@ class ProfileController extends GetxController {
   /*
     * This method is used to pick image from gallery
   */
-  Future<void> pickeImage() async {
-    try {
-      final ImagePicker picker = ImagePicker();
-      final XFile? pickedImage = await picker.pickImage(
-        source: ImageSource.gallery,
-        imageQuality: 50,
-      );
-      if (pickedImage != null) {
-        image = pickedImage;
-        imagePath.value = pickedImage.path;
-        update();
-      } else {
-        SnackBarUtil.showErrorSnackBar('No image selected');
-      }
-    } catch (e) {
-      SnackBarUtil.showErrorSnackBar('Error while picking image');
-    }
+  void pickeImage() async {
+    imagePath.value = await profileServices.pickImage() ?? '';
   }
 
   /*

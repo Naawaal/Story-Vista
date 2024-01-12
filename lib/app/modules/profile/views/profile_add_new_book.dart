@@ -37,7 +37,7 @@ class ProfileAddNewBook extends GetView<ProfileController> {
                 ),
                 child: controller.imagePath.value.isEmpty
                     ? IconButton(
-                        onPressed: () async => await controller.pickeImage(),
+                        onPressed: () async => controller.pickeImage(),
                         icon: Icon(
                           Icons.add_a_photo,
                           color: Get.theme.colorScheme.onSecondary,
@@ -48,6 +48,7 @@ class ProfileAddNewBook extends GetView<ProfileController> {
                     : null,
               ),
             ),
+            Gap(Get.height * 0.002),
             Row(
               children: [
                 ButtonWidget(text: "Select PDF", onPressed: () {}),
