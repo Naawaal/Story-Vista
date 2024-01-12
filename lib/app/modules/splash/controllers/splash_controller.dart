@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
 
+import '../../../data/services/splash_services.dart';
+
 class SplashController extends GetxController {
-  //TODO: Implement SplashController
+  /*
+    * This is the instance of SplashServices.
+  */
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final SplashServices splashServices = SplashServices();
+  /*
+    * This method is used to sign-in with Google.
+  */
+  void signInWithGoogle() async {
+    await splashServices.signInWithGoogle();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

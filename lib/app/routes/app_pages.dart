@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:story_vista/app/data/services/splash_services.dart';
 
+import '../data/services/user_preference_services.dart';
 import '../modules/book_detail/bindings/book_detail_binding.dart';
 import '../modules/book_detail/views/book_detail_view.dart';
 import '../modules/book_viewer/bindings/book_viewer_binding.dart';
@@ -18,7 +21,25 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  /*
+    * This is the initial route of the application.
+    * If the user is logged in, it will return the home route,
+    * otherwise it will return the splash route.
+  */
+  static Future<String> get initialRoute async {
+    // Instance of Firebase Auth
+    final auth = FirebaseAuth.instance;
+    // Get the current user
+    final User? user = auth.currentUser;
+    // Get the user logged in status
+    bool isLoggedIn = await UserPreferences().getUserLoggedIn();
+    // Check if the user is not null and logged in
+    if (user != null && isLoggedIn) {
+      return Routes.HOME;
+    } else {
+      return Routes.SPLASH;
+    }
+  }
 
   static final routes = [
     GetPage(

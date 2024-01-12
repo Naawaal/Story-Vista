@@ -15,7 +15,7 @@ Future<void> main() async {
   runApp(
     GetMaterialApp(
       title: "StoryVista",
-      initialRoute: AppPages.INITIAL,
+      initialRoute: await AppPages.initialRoute,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
       smartManagement: SmartManagement.full,
