@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:story_vista/app/data/services/splash_services.dart';
 
 import '../data/services/user_preference_services.dart';
 import '../modules/book_detail/bindings/book_detail_binding.dart';

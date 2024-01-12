@@ -6,8 +6,8 @@ class SplashController extends GetxController {
   /*
     * This is the instance of SplashServices.
   */
-
   final SplashServices splashServices = SplashServices();
+
   /*
     * This method is used to sign-in with Google.
   */

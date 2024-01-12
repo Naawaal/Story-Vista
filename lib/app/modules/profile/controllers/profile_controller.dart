@@ -3,9 +3,16 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:story_vista/app/utils/snack_bar_util.dart';
 
+import '../../../data/services/splash_services.dart';
+
 class ProfileController extends GetxController {
   /*
-  * TextEditingControllers for Book Title, Author Name, Description, Price, Language, Pages and Audio Length
+    * This is the instance of SplashServices.
+  */
+  final SplashServices splashServices = SplashServices();
+
+  /*
+    * TextEditingControllers for Book Title, Author Name, Description, Price, Language, Pages and Audio Length
   */
   final TextEditingController bookTitleController = TextEditingController();
   final TextEditingController authorNameController = TextEditingController();
@@ -16,17 +23,17 @@ class ProfileController extends GetxController {
   final TextEditingController audioLengthController = TextEditingController();
 
   /*
-  * This variable is used to store image picked from gallery
+    * This variable is used to store image picked from gallery
   */
   XFile? image;
 
   /*
-  * This variable is used to store image path
+    * This variable is used to store image path
   */
   RxString imagePath = ''.obs;
 
   /*
-  * This method is used to pick image from gallery
+    * This method is used to pick image from gallery
   */
   Future<void> pickeImage() async {
     try {
@@ -45,5 +52,12 @@ class ProfileController extends GetxController {
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while picking image');
     }
+  }
+
+  /*
+    * This method is used sign-out the user
+  */
+  void signOut() async {
+    await splashServices.signOut();
   }
 }
