@@ -1,12 +1,9 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
+import 'package:story_vista/app/modules/profile/views/profile_upload_book_content_view.dart';
 
-import '../../../components/text_form_filed_component.dart';
 import '../controllers/profile_controller.dart';
 import 'profile_custom_app_bar_widget_view.dart';
 
@@ -81,49 +78,7 @@ class ProfileView extends GetView<ProfileController> {
         onPressed: () async => Get.defaultDialog(
           radius: 08,
           title: 'Upload Book',
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Obx(
-                () => Container(
-                  width: Get.width * 0.4,
-                  height: Get.height * 0.25,
-                  decoration: BoxDecoration(
-                    color: Get.theme.colorScheme.primary.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(08),
-                    image: DecorationImage(
-                      image: controller.imagePath.value.isNotEmpty
-                          ? FileImage(
-                              File(controller.imagePath.value),
-                            )
-                          : MemoryImage(Uint8List(0)) as ImageProvider,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: controller.imagePath.value.isEmpty
-                      ? SizedBox(
-                          child: IconButton(
-                            onPressed: () async =>
-                                await controller.pickeImage(),
-                            icon: Icon(
-                              Icons.add_a_photo,
-                              color: Get.theme.colorScheme.onSecondary,
-                            ),
-                          ),
-                        )
-                      : null,
-                ),
-              ),
-              Gap(Get.height * 0.02),
-              TextFormFielComponent(
-                controller: controller.bookTitleController,
-                textInputAction: TextInputAction.next,
-                keyboardType: TextInputType.text,
-                hintText: "Book Title",
-                iconData: Icons.book,
-              ),
-            ],
-          ),
+          content: const ProfileUploadBookContentView(),
           textConfirm: 'Upload',
         ),
         child: const Icon(Icons.add),
