@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'book_detail_widget_view.dart';
 
 class BookDetailHeaderWidgetView extends GetView {
-  const BookDetailHeaderWidgetView({Key? key}) : super(key: key);
+  const BookDetailHeaderWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

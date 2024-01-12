@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BookDetailCustomAppBarWidgetView extends GetView {
-  const BookDetailCustomAppBarWidgetView({Key? key}) : super(key: key);
+  const BookDetailCustomAppBarWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return AppBar(

@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 class BookDetailWidgetView extends GetView {
-  const BookDetailWidgetView({Key? key}) : super(key: key);
+  const BookDetailWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return Row(

@@ -10,7 +10,7 @@ import 'package:story_vista/app/widgets/button_widget.dart';
 import '../controllers/book_detail_controller.dart';
 
 class BookDetailView extends GetView<BookDetailController> {
-  const BookDetailView({Key? key}) : super(key: key);
+  const BookDetailView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

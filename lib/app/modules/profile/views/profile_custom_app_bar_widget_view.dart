@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileCustomAppBarWidgetView extends GetView {
-  const ProfileCustomAppBarWidgetView({Key? key}) : super(key: key);
+  const ProfileCustomAppBarWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return AppBar(

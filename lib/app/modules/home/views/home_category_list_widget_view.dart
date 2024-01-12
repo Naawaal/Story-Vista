@@ -6,7 +6,7 @@ import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
 import '../../../widgets/categories_widget.dart';
 
 class HomeCategoryListWidgetView extends GetView<HomeController> {
-  const HomeCategoryListWidgetView({Key? key}) : super(key: key);
+  const HomeCategoryListWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(

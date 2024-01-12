@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:story_vista/app/routes/app_pages.dart';
 
 class HomePopularListWidgetView extends GetView {
-  const HomePopularListWidgetView({Key? key}) : super(key: key);
+  const HomePopularListWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(

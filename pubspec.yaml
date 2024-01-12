@@ -12,9 +12,11 @@ dependencies:
     sdk: flutter
   gap: ^3.0.1
   syncfusion_flutter_pdfviewer: ^24.1.44
+  image_picker: ^1.0.7
+  flutter_plugin_android_lifecycle: ^2.0.17
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
 

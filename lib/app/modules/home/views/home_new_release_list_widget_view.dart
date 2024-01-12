@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 class HomeNewReleaseListWidgetView extends GetView {
-  const HomeNewReleaseListWidgetView({Key? key}) : super(key: key);
+  const HomeNewReleaseListWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return Expanded(
