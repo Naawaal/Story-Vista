@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/profile/views/profile_bottom_view.dart';
@@ -32,9 +31,16 @@ class ProfileView extends GetView<ProfileController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async => Get.defaultDialog(
           radius: 08,
+          cancel: TextButton(
+            onPressed: () => Get.back(),
+            child: const Text('Cancel'),
+          ),
+          confirm: TextButton(
+            onPressed: () async {},
+            child: const Text('Upload'),
+          ),
           title: 'Upload Book',
           content: const ProfileUploadBookContentView(),
-          textConfirm: 'Upload',
         ),
         child: const Icon(Icons.add),
       ),
