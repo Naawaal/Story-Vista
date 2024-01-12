@@ -7,6 +7,7 @@ class TextFormFielComponent extends StatelessWidget {
   final TextInputType? keyboardType;
   final IconData? iconData;
   final String hintText;
+  final int? maxLines;
   const TextFormFielComponent({
     super.key,
     required this.controller,
@@ -14,6 +15,7 @@ class TextFormFielComponent extends StatelessWidget {
     this.textInputAction,
     this.keyboardType,
     this.iconData,
+    this.maxLines,
   });
 
   @override
@@ -23,6 +25,7 @@ class TextFormFielComponent extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
+      maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hintText,
         border: OutlineInputBorder(
@@ -38,10 +41,12 @@ class TextFormFielComponent extends StatelessWidget {
             color: Colors.grey,
           ),
         ),
-        prefixIcon: Icon(
-          iconData,
-          color: Get.theme.colorScheme.secondary,
-        ),
+        prefixIcon: iconData != null
+            ? Icon(
+                iconData,
+                color: Get.theme.colorScheme.secondary,
+              )
+            : null,
       ),
     );
   }

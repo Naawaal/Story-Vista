@@ -66,10 +66,10 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
             Gap(Get.height * 0.01),
             TextFormFielComponent(
               controller: controller.descriptionController,
-              textInputAction: TextInputAction.done,
+              maxLines: 05,
+              textInputAction: TextInputAction.next,
               keyboardType: TextInputType.text,
               hintText: "Description",
-              iconData: Icons.description,
             ),
             Gap(Get.height * 0.01),
             Row(
@@ -77,7 +77,7 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
                 Expanded(
                   child: TextFormFielComponent(
                     controller: controller.priceController,
-                    textInputAction: TextInputAction.done,
+                    textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.number,
                     hintText: "Price",
                     iconData: Icons.money,
@@ -87,7 +87,7 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
                 Expanded(
                   child: TextFormFielComponent(
                     controller: controller.pagesController,
-                    textInputAction: TextInputAction.done,
+                    textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.number,
                     hintText: "Pages",
                     iconData: Icons.pages,
@@ -98,7 +98,7 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
             Gap(Get.height * 0.02),
             TextFormFielComponent(
               controller: controller.languageController,
-              textInputAction: TextInputAction.done,
+              textInputAction: TextInputAction.next,
               keyboardType: TextInputType.text,
               hintText: "Language",
               iconData: Icons.language,
