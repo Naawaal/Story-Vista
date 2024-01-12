@@ -4,12 +4,10 @@ class BookModel {
   String? author;
   String? description;
   String? image;
-  double? rating;
   String? price;
   int? year;
   int? pages;
   String? language;
-  String? publisher;
   String? audioBook;
   String? category;
   String? aboutAuthor;
@@ -22,12 +20,10 @@ class BookModel {
       this.author,
       this.description,
       this.image,
-      this.rating,
       this.price,
       this.year,
       this.pages,
       this.language,
-      this.publisher,
       this.audioBook,
       this.category,
       this.aboutAuthor,
@@ -50,9 +46,7 @@ class BookModel {
     if (json["image"] is String) {
       image = json["image"];
     }
-    if (json["rating"] is double) {
-      rating = json["rating"];
-    }
+
     if (json["price"] is String) {
       price = json["price"];
     }
@@ -64,9 +58,6 @@ class BookModel {
     }
     if (json["language"] is String) {
       language = json["language"];
-    }
-    if (json["publisher"] is String) {
-      publisher = json["publisher"];
     }
     if (json["audioBook"] is String) {
       audioBook = json["audioBook"];
@@ -92,12 +83,10 @@ class BookModel {
     data["author"] = author;
     data["description"] = description;
     data["image"] = image;
-    data["rating"] = rating;
     data["price"] = price;
     data["year"] = year;
     data["pages"] = pages;
     data["language"] = language;
-    data["publisher"] = publisher;
     data["audioBook"] = audioBook;
     data["category"] = category;
     data["aboutAuthor"] = aboutAuthor;

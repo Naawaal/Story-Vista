@@ -31,6 +31,11 @@ class ProfileController extends GetxController {
   RxString imagePath = ''.obs;
 
   /*
+    * This variable is used to store pdf path
+  */
+  RxString pdfPath = ''.obs;
+
+  /*
     * This method is used to pick image from gallery
   */
   void pickeImage() async {
@@ -41,7 +46,7 @@ class ProfileController extends GetxController {
     * This method is used to pick pdf from file manager
   */
   void pickPdf() async {
-    await profileServices.pickPdf();
+    pdfPath.value = await profileServices.pickPdf() ?? '';
   }
 
   /*

@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:story_vista/app/data/models/book_model.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../utils/snack_bar_util.dart';
@@ -45,7 +46,7 @@ class ProfileServices {
   /*
     * This method is used to pick pdf from file manager
   */
-  Future<void> pickPdf() async {
+  Future<String?> pickPdf() async {
     try {
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
@@ -54,7 +55,8 @@ class ProfileServices {
       if (result != null) {
         File file = File(result.files.first.path!);
         if (file.existsSync()) {
-          uploadPdf(file);
+          final pdfUrl = uploadPdf(file);
+          return pdfUrl.toString();
         } else {
           SnackBarUtil.showErrorSnackBar('No pdf selected');
         }
@@ -64,22 +66,61 @@ class ProfileServices {
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while picking pdf');
     }
+    return null;
+  }
+
+  /*
+    * This method is used upload data to firestore database
+  */
+  Future<BookModel> uploadData({
+    required String id,
+    required String bookTitle,
+    required String authorName,
+    required String description,
+    required String price,
+    required String language,
+    required String pages,
+    required String audioLength,
+    required String bookUrl,
+  }) async {
+    try {
+      final bookData = BookModel(
+        id: id,
+        title: bookTitle,
+        description: description,
+        price: price,
+        language: language,
+        pages: int.tryParse(pages) ?? 0,
+        author: authorName,
+        image: '',
+        aboutAuthor: '',
+        audioBook: '',
+        audioLen: audioLength,
+        bookUrl: bookUrl,
+        category: 'Isekai',
+        year: DateTime.now().year,
+      );
+    } catch (e) {
+      SnackBarUtil.showErrorSnackBar('Error while uploading data');
+    }
+    return BookModel();
   }
 
   /*
     * This method is used to upload image to firebase storage
   */
-  Future<void> uploadImage(File image) async {
+  Future<String?> uploadImage(File image) async {
     try {
       const uuid = Uuid();
       final fileName = uuid.v4();
       final storageRef = _storage.ref().child('Images/$fileName');
       final uploadTask = storageRef.putFile(image);
       final TaskSnapshot taskSnapshot = await uploadTask;
-      await taskSnapshot.ref.getDownloadURL();
+      return await taskSnapshot.ref.getDownloadURL();
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while uploading image');
     }
+    return null;
   }
 
   /*
