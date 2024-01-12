@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -14,7 +13,6 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       children: [
         Obx(
           () => Container(
@@ -23,24 +21,25 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
             decoration: BoxDecoration(
               color: Get.theme.colorScheme.primary.withOpacity(0.2),
               borderRadius: BorderRadius.circular(08),
-              image: DecorationImage(
-                image: controller.imagePath.value.isNotEmpty
-                    ? FileImage(
+              image: controller.imagePath.value.isNotEmpty
+                  ? DecorationImage(
+                      image: FileImage(
                         File(controller.imagePath.value),
-                      )
-                    : MemoryImage(Uint8List(0)) as ImageProvider,
-                fit: BoxFit.cover,
-              ),
+                      ),
+                      fit: BoxFit.cover,
+                    )
+                  // Don't provide an image when imagePath is empty
+                  : null,
             ),
             child: controller.imagePath.value.isEmpty
-                ? SizedBox(
-                    child: IconButton(
-                      onPressed: () async => await controller.pickeImage(),
-                      icon: Icon(
-                        Icons.add_a_photo,
-                        color: Get.theme.colorScheme.onSecondary,
-                      ),
+                ? IconButton(
+                    onPressed: () async => await controller.pickeImage(),
+                    icon: Icon(
+                      Icons.add_a_photo,
+                      color: Get.theme.colorScheme.onSecondary,
                     ),
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                   )
                 : null,
           ),
@@ -68,6 +67,46 @@ class ProfileUploadBookContentView extends GetView<ProfileController> {
           keyboardType: TextInputType.text,
           hintText: "Description",
           iconData: Icons.description,
+        ),
+        Gap(Get.height * 0.01),
+        Row(
+          children: [
+            Expanded(
+              child: TextFormFielComponent(
+                controller: controller.priceController,
+                textInputAction: TextInputAction.done,
+                keyboardType: TextInputType.number,
+                hintText: "Price",
+                iconData: Icons.money,
+              ),
+            ),
+            Gap(Get.width * 0.02),
+            Expanded(
+              child: TextFormFielComponent(
+                controller: controller.pagesController,
+                textInputAction: TextInputAction.done,
+                keyboardType: TextInputType.number,
+                hintText: "Pages",
+                iconData: Icons.pages,
+              ),
+            ),
+          ],
+        ),
+        Gap(Get.height * 0.02),
+        TextFormFielComponent(
+          controller: controller.languageController,
+          textInputAction: TextInputAction.done,
+          keyboardType: TextInputType.text,
+          hintText: "Language",
+          iconData: Icons.language,
+        ),
+        Gap(Get.height * 0.02),
+        TextFormFielComponent(
+          controller: controller.audioLengthController,
+          textInputAction: TextInputAction.done,
+          keyboardType: TextInputType.text,
+          hintText: "Audio Length",
+          iconData: Icons.audiotrack,
         ),
       ],
     );
