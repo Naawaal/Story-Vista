@@ -38,6 +38,13 @@ class ProfileController extends GetxController {
   }
 
   /*
+    * This method is used to pick pdf from file manager
+  */
+  void pickPdf() async {
+    await profileServices.pickPdf();
+  }
+
+  /*
     * This method is used sign-out the user
   */
   void signOut() async {

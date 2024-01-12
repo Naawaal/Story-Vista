@@ -51,7 +51,8 @@ class ProfileAddNewBook extends GetView<ProfileController> {
             Gap(Get.height * 0.002),
             Row(
               children: [
-                ButtonWidget(text: "Select PDF", onPressed: () {}),
+                ButtonWidget(
+                    text: "Select PDF", onPressed: () => controller.pickPdf()),
                 Gap(Get.width * 0.001),
                 ButtonWidget(text: "Select Audio", onPressed: () {}),
               ],
