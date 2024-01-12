@@ -6,11 +6,11 @@ import 'package:story_vista/app/routes/app_pages.dart';
 import '../../../widgets/button_widget.dart';
 
 class SplashButtomNavigationView extends GetView {
-  const SplashButtomNavigationView({Key? key}) : super(key: key);
+  const SplashButtomNavigationView({super.key});
   @override
   Widget build(BuildContext context) {
     return ButtonWidget(
-      text: 'Continue',
+      text: 'Sign-in with Google',
       onPressed: () => Get.offAllNamed(Routes.HOME),
     );
   }

@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 class SplashTopView extends GetView {
-  const SplashTopView({Key? key}) : super(key: key);
+  const SplashTopView({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,11 +43,38 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDVSYvr9ZCrI5viBxgJFyN14hhYhu4kBvY',
+    appId: '1:136906254993:web:816668d2b5524887baed30',
+    messagingSenderId: '136906254993',
+    projectId: 'story-vista-64761',
+    authDomain: 'story-vista-64761.firebaseapp.com',
+    storageBucket: 'story-vista-64761.appspot.com',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyB6gGmFlWOsZcZB-cB-DCnhiLP3Gfj7YTU',
     appId: '1:136906254993:android:716ab4d10f14ce6dbaed30',
     messagingSenderId: '136906254993',
     projectId: 'story-vista-64761',
     storageBucket: 'story-vista-64761.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAIER9KZh-vFohSYyrhF0vnodCKZK4Qyg0',
+    appId: '1:136906254993:ios:1df4056cf6f89318baed30',
+    messagingSenderId: '136906254993',
+    projectId: 'story-vista-64761',
+    storageBucket: 'story-vista-64761.appspot.com',
+    iosBundleId: 'com.vishwasaraxit.storyVista',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAIER9KZh-vFohSYyrhF0vnodCKZK4Qyg0',
+    appId: '1:136906254993:ios:c52f50b3c74caffabaed30',
+    messagingSenderId: '136906254993',
+    projectId: 'story-vista-64761',
+    storageBucket: 'story-vista-64761.appspot.com',
+    iosBundleId: 'com.vishwasaraxit.storyVista.RunnerTests',
   );
 }

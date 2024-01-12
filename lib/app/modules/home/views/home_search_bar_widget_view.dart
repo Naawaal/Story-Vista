@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeSearchBarWidgetView extends GetView {
-  const HomeSearchBarWidgetView({Key? key}) : super(key: key);
+  const HomeSearchBarWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -11,6 +11,7 @@ class HomeSearchBarWidgetView extends GetView {
       enableSuggestions: true,
       keyboardType: TextInputType.text,
       textInputAction: TextInputAction.search,
+      cursorColor: Get.theme.colorScheme.onPrimary,
       style: Get.textTheme.bodyMedium!
           .copyWith(color: Get.theme.colorScheme.onPrimary),
       decoration: InputDecoration(
