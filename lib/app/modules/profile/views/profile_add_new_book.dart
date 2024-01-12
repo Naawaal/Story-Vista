@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/profile/controllers/profile_controller.dart';
+import 'package:story_vista/app/components/button_widget.dart';
 
 import '../../../components/text_form_filed_component.dart';
 
@@ -46,6 +47,13 @@ class ProfileAddNewBook extends GetView<ProfileController> {
                       )
                     : null,
               ),
+            ),
+            Row(
+              children: [
+                ButtonWidget(text: "Select PDF", onPressed: () {}),
+                Gap(Get.width * 0.001),
+                ButtonWidget(text: "Select Audio", onPressed: () {}),
+              ],
             ),
             Gap(Get.height * 0.02),
             TextFormFielComponent(

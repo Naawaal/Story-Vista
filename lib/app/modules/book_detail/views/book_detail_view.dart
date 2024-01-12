@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:story_vista/app/modules/book_detail/views/book_detail_custom_app_bar_widget_view.dart';
 import 'package:story_vista/app/modules/book_detail/views/book_detail_header_widget_view.dart';
 import 'package:story_vista/app/routes/app_pages.dart';
-import 'package:story_vista/app/widgets/button_widget.dart';
+import 'package:story_vista/app/components/button_widget.dart';
 
 import '../controllers/book_detail_controller.dart';
 
