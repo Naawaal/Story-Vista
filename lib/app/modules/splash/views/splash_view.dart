@@ -7,7 +7,7 @@ import 'package:story_vista/app/modules/splash/views/splash_top_view.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
-  const SplashView({Key? key}) : super(key: key);
+  const SplashView({super.key});
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

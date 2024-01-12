@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "136906254993",
+    "project_id": "story-vista-64761",
+    "storage_bucket": "story-vista-64761.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136906254993:android:716ab4d10f14ce6dbaed30",
+        "android_client_info": {
+          "package_name": "com.vishwasaraxit.story_vista"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6gGmFlWOsZcZB-cB-DCnhiLP3Gfj7YTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
