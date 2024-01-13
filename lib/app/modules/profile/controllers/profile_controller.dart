@@ -35,6 +35,7 @@ class ProfileController extends GetxController {
   final TextEditingController bookTitleController = TextEditingController();
   final TextEditingController authorNameController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+  final TextEditingController aboutAuthorController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController languageController = TextEditingController();
   final TextEditingController pagesController = TextEditingController();
@@ -53,6 +54,7 @@ class ProfileController extends GetxController {
     'book title',
     'author name',
     'description',
+    'about author',
     'price',
     'language',
     'pages',
@@ -141,7 +143,7 @@ class ProfileController extends GetxController {
           id: DateTime.now().millisecondsSinceEpoch.toString(),
           title: bookTitleController.text,
           author: authorNameController.text,
-          aboutAuthor: descriptionController.text,
+          aboutAuthor: aboutAuthorController.text,
           price: priceController.text,
           language: languageController.text,
           pages: int.tryParse(pagesController.text) ?? 0,

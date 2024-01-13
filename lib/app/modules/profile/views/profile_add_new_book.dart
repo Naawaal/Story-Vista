@@ -49,10 +49,14 @@ class ProfileAddNewBook extends GetView<ProfileController> {
             Gap(Get.height * 0.002),
             Row(
               children: [
-                ButtonWidget(
-                    text: "Select PDF", onPressed: () => controller.pickPdf()),
+                Expanded(
+                  child: ButtonWidget(
+                      text: "Select PDF",
+                      onPressed: () => controller.pickPdf()),
+                ),
                 Gap(Get.width * 0.001),
-                ButtonWidget(text: "Select Audio", onPressed: () {}),
+                // Todo flutter : Uncomment this when the audio feature is ready
+                // ButtonWidget(text: "Select Audio", onPressed: () {}),
               ],
             ),
             Gap(Get.height * 0.02),
@@ -77,9 +81,16 @@ class ProfileAddNewBook extends GetView<ProfileController> {
               maxLines: 05,
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.text,
-              hintText: "Description",
+              hintText: "Book Description",
             ),
             Gap(Get.height * 0.01),
+            TextFormFielComponent(
+              controller: controller.aboutAuthorController,
+              maxLines: 05,
+              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.text,
+              hintText: "About Author",
+            ),
             Row(
               children: [
                 Expanded(
