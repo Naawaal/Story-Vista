@@ -8,7 +8,7 @@ import 'package:story_vista/app/modules/home/views/home_category_list_widget_vie
 import 'home_search_bar_widget_view.dart';
 
 class HomeTopWidgetView extends GetView<HomeController> {
-  const HomeTopWidgetView({Key? key}) : super(key: key);
+  const HomeTopWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

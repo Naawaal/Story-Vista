@@ -42,7 +42,7 @@ class HomeNewReleaseListWidgetView extends GetView<HomeController> {
                           child: Image.network(
                             data[index]!.coverUrl.toString(),
                             fit: BoxFit.cover,
-                            height: Get.height * 0.10,
+                            height: Get.height * 0.14,
                             width: Get.width * 0.22,
                           ),
                         ),

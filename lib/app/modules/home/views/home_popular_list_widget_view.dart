@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
+import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
 import 'package:story_vista/app/routes/app_pages.dart';
 
-class HomePopularListWidgetView extends GetView {
+class HomePopularListWidgetView extends GetView<HomeController> {
   const HomePopularListWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: Get.height * 0.3,
+    return Expanded(
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         itemCount: 10,
         itemBuilder: (context, index) => Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
             GestureDetector(
               onTap: () => Get.toNamed(Routes.BOOK_DETAIL),
@@ -45,7 +44,7 @@ class HomePopularListWidgetView extends GetView {
                   "One Piece: Chapter 1000",
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
+                  maxLines: 1,
                 ),
               ),
             ),

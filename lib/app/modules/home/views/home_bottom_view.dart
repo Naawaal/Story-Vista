@@ -7,7 +7,7 @@ import 'package:story_vista/app/modules/home/views/home_popular_list_widget_view
 import 'home_new_release_list_widget_view.dart';
 
 class HomeBottomView extends GetView {
-  const HomeBottomView({Key? key}) : super(key: key);
+  const HomeBottomView({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
