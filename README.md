@@ -46,6 +46,22 @@ Run the app
 - Profile
 - Upload Book
 
+## Packages used cupertino_icons: ^1.0.2
+
+- cupertino_icons: ^1.0.2
+- get: 4.6.6
+- gap: ^3.0.1
+- syncfusion_flutter_pdfviewer: ^24.1.44
+- image_picker: ^1.0.7
+- firebase_core: ^2.24.2
+- cloud_firestore: ^4.14.0
+- google_sign_in: ^6.2.1
+- firebase_auth: ^4.16.0
+- shared_preferences: ^2.2.2
+- file_picker: ^6.1.1
+- uuid: ^4.3.3
+- firebase_storage: ^11.6.0
+
 ## Authors
 
 - [@Naawaal](https://github.com/Naawaal)
