@@ -175,6 +175,13 @@ class ProfileController extends GetxController {
   }
 
   /*
+    * This method is used to delete the book from firestore
+  */
+  void deleteBook(String id) async {
+    await profileServices.deleteUserUploadedBook(id);
+  }
+
+  /*
     * This method is used sign-out the user
   */
   void signOut() async {

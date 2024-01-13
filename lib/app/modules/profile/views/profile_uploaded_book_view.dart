@@ -102,6 +102,14 @@ class ProfileUploadedBookView extends GetView<ProfileController> {
                             ],
                           ),
                         ),
+                        IconButton(
+                          onPressed: () async =>
+                              controller.deleteBook(books[index]!.id!),
+                          icon: Icon(
+                            Icons.delete,
+                            color: Get.theme.colorScheme.error,
+                          ),
+                        ),
                       ],
                     ),
                   ),

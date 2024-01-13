@@ -204,4 +204,24 @@ class ProfileServices {
       }
     });
   }
+
+  /*
+    * This method is used to delete user uploaded book from their own prviate collection and from the main book collection
+  */
+  Future<void> deleteUserUploadedBook(String bookId) async {
+    try {
+      final User? user = getCurrentUser();
+      if (user != null) {
+        await _firestore
+            .collection("userBook")
+            .doc(user.uid)
+            .collection("Books")
+            .doc(bookId)
+            .delete();
+        await _firestore.collection("Books").doc(bookId).delete();
+      }
+    } catch (e) {
+      SnackBarUtil.showErrorSnackBar('Error while deleting book');
+    }
+  }
 }

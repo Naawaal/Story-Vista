@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:story_vista/app/data/models/book_model.dart';
 import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
 
+import '../../../routes/app_pages.dart';
+
 class HomeNewReleaseListWidgetView extends GetView<HomeController> {
   const HomeNewReleaseListWidgetView({super.key});
   @override
@@ -35,74 +37,80 @@ class HomeNewReleaseListWidgetView extends GetView<HomeController> {
                       color: Get.theme.colorScheme.secondary.withOpacity(0.9),
                       borderRadius: BorderRadius.circular(08),
                     ),
-                    child: Row(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.network(
-                            data[index]!.coverUrl.toString(),
-                            fit: BoxFit.cover,
-                            height: Get.height * 0.14,
-                            width: Get.width * 0.22,
+                    child: InkWell(
+                      onTap: () => Get.toNamed(
+                        Routes.BOOK_DETAIL,
+                        arguments: data[index],
+                      ),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.network(
+                              data[index]!.coverUrl.toString(),
+                              fit: BoxFit.cover,
+                              height: Get.height * 0.14,
+                              width: Get.width * 0.22,
+                            ),
                           ),
-                        ),
-                        Gap(Get.width * 0.02),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                data[index]!.title.toString(),
-                                style: Get.textTheme.bodyMedium!.copyWith(
-                                  color: Get.theme.colorScheme.onPrimary,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Gap(Get.height * 0.004),
-                              Text(
-                                "By: ${data[index]!.author.toString()}",
-                                style: Get.textTheme.labelSmall!.copyWith(
-                                  color: Get.theme.colorScheme.onPrimary,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              Gap(Get.height * 0.002),
-                              Text(
-                                'Price: \$${data[index]!.price.toString()}',
-                                style: Get.textTheme.bodySmall!.copyWith(
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Gap(Get.height * 0.002),
-                              Text(
-                                'Release Date: ${data[index]!.year.toString()}',
-                                style: Get.textTheme.bodySmall!.copyWith(
-                                  color: Get.theme.colorScheme.onPrimary,
-                                ),
-                              ),
-                              Gap(Get.height * 0.002),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
+                          Gap(Get.width * 0.02),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  data[index]!.title.toString(),
+                                  style: Get.textTheme.bodyMedium!.copyWith(
+                                    color: Get.theme.colorScheme.onPrimary,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  const Gap(2),
-                                  Text(
-                                    '4.5',
-                                    style: Get.textTheme.bodySmall!.copyWith(
-                                      color: Get.theme.colorScheme.onPrimary,
+                                ),
+                                Gap(Get.height * 0.004),
+                                Text(
+                                  "By: ${data[index]!.author.toString()}",
+                                  style: Get.textTheme.labelSmall!.copyWith(
+                                    color: Get.theme.colorScheme.onPrimary,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                Gap(Get.height * 0.002),
+                                Text(
+                                  'Price: \$${data[index]!.price.toString()}',
+                                  style: Get.textTheme.bodySmall!.copyWith(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                Gap(Get.height * 0.002),
+                                Text(
+                                  'Release Date: ${data[index]!.year.toString()}',
+                                  style: Get.textTheme.bodySmall!.copyWith(
+                                    color: Get.theme.colorScheme.onPrimary,
+                                  ),
+                                ),
+                                Gap(Get.height * 0.002),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.star,
+                                      color: Colors.yellow,
+                                      size: 16,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                    const Gap(2),
+                                    Text(
+                                      '4.5',
+                                      style: Get.textTheme.bodySmall!.copyWith(
+                                        color: Get.theme.colorScheme.onPrimary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 );

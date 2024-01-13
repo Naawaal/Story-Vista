@@ -32,7 +32,7 @@ class BookDetailView extends GetView<BookDetailController> {
                 children: [
                   Gap(Get.height * 0.005),
                   Text(
-                    "About Book",
+                    'About Book',
                     style: Get.textTheme.bodyMedium!.copyWith(
                       color: Get.theme.colorScheme.secondary,
                       fontWeight: FontWeight.w500,
@@ -40,7 +40,7 @@ class BookDetailView extends GetView<BookDetailController> {
                   ),
                   Gap(Get.height * 0.005),
                   Text(
-                    "ONE PIECE is a legendary high-seas quest unlike any other. Luffy is a young adventurer who has longed for a life of freedom ever since he can remember. He sets off from his small village on a perilous journey to find the legendary fabled treasure, ONE PIECE, to become King of the Pirates",
+                    controller.book.description.toString(),
                     textAlign: TextAlign.justify,
                     style: Get.textTheme.bodySmall!.copyWith(
                       color: Get.theme.colorScheme.onBackground,
@@ -56,7 +56,7 @@ class BookDetailView extends GetView<BookDetailController> {
                   ),
                   Gap(Get.height * 0.005),
                   Text(
-                    "Eiichiro Oda is a Japanese manga artist and the creator of the series One Piece (1997–present). With more than 480 million tankōbon copies in circulation worldwide, One Piece is both the best-selling manga and the best-selling comic series of all time, in turn making Oda one of the best-selling fiction authors.",
+                    controller.book.aboutAuthor.toString(),
                     textAlign: TextAlign.justify,
                     style: Get.textTheme.bodySmall!.copyWith(
                       color: Get.theme.colorScheme.onBackground,
@@ -73,7 +73,8 @@ class BookDetailView extends GetView<BookDetailController> {
           Expanded(
             child: ButtonWidget(
               text: 'Read Now',
-              onPressed: () => Get.toNamed(Routes.BOOK_VIEWER),
+              onPressed: () =>
+                  Get.toNamed(Routes.BOOK_VIEWER, arguments: controller.book),
             ),
           ),
           Expanded(child: ButtonWidget(text: 'Play Audio', onPressed: () {})),

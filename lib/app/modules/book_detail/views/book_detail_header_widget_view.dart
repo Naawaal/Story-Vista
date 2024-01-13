@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
+import 'package:story_vista/app/modules/book_detail/controllers/book_detail_controller.dart';
 
 import 'book_detail_widget_view.dart';
 
-class BookDetailHeaderWidgetView extends GetView {
+class BookDetailHeaderWidgetView extends GetView<BookDetailController> {
   const BookDetailHeaderWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
@@ -24,30 +25,31 @@ class BookDetailHeaderWidgetView extends GetView {
             clipBehavior: Clip.antiAlias,
             borderRadius: const BorderRadius.all(Radius.circular(12)),
             child: Image(
-              image: const AssetImage(
-                'assets/png/manga.png',
+              image: NetworkImage(
+                controller.book.coverUrl.toString(),
               ),
               fit: BoxFit.cover,
+              height: Get.height * 0.2,
               width: Get.width * 0.35,
             ),
           ),
           Gap(Get.height * 0.02),
           Text(
-            'One Piece: Chapter 1000',
+            controller.book.title.toString(),
             style: Get.textTheme.headlineSmall!.copyWith(
               color: Get.theme.colorScheme.onPrimary,
             ),
           ),
           Gap(Get.height * 0.01),
           Text(
-            'By: Eiichiro Oda',
+            'By: ${controller.book.author.toString()}',
             style: Get.textTheme.labelLarge!.copyWith(
               color: Get.theme.colorScheme.onPrimary,
             ),
           ),
           Gap(Get.height * 0.01),
           Text(
-            'ONE PIECE is a legendary high-seas quest unlike any other. Luffy is a young adventurer who has longed for a life of freedom ever since he can remember. He sets off from his small village on a perilous journey to find the legendary fabled treasure, ONE PIECE, to become King of the Pirates',
+            controller.book.description.toString(),
             textAlign: TextAlign.justify,
             style: Get.textTheme.labelSmall!.copyWith(
               color: Get.theme.colorScheme.onPrimary,
