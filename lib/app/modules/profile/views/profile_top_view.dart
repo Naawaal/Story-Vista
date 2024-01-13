@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
+import 'package:story_vista/app/modules/profile/controllers/profile_controller.dart';
 
-class ProfileTopView extends GetView {
+class ProfileTopView extends GetView<ProfileController> {
   const ProfileTopView({super.key});
   @override
   Widget build(BuildContext context) {
@@ -15,22 +16,22 @@ class ProfileTopView extends GetView {
       color: Get.theme.colorScheme.primary,
       child: Column(
         children: [
-          const CircleAvatar(
+          CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-              'https://avatars.githubusercontent.com/u/19484515?v=4',
+              controller.getCurrentUser()!.photoURL.toString(),
             ),
           ),
           Gap(Get.height * 0.02),
           Text(
-            'Nawal Shrestha',
+            controller.getCurrentUser()!.displayName.toString(),
             style: Get.textTheme.headlineSmall!.copyWith(
               color: Get.theme.colorScheme.onPrimary,
             ),
           ),
           Gap(Get.height * 0.004),
           Text(
-            'test@gmail.com',
+            controller.getCurrentUser()!.email.toString(),
             style: Get.textTheme.bodySmall!.copyWith(
               color: Get.theme.colorScheme.onPrimary,
             ),

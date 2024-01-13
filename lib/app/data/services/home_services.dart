@@ -42,4 +42,26 @@ class HomeServices {
       }
     });
   }
+
+  /*
+  * Get all popular books from the database
+  */
+  Stream<List<BookModel?>> getAllPopularBooks() {
+    // Path to the book collection inside user uploaded book collection
+    final bookRef = _firestore.collection('Books');
+    // Get the book collection data
+    return bookRef.snapshots().map((snapDocs) {
+      final document = snapDocs.docs;
+      List<BookModel> bookModel = [];
+      if (document.isNotEmpty) {
+        for (var doc in document) {
+          final data = doc.data();
+          bookModel.add(BookModel.fromJson(data));
+        }
+        return bookModel;
+      } else {
+        return bookModel;
+      }
+    });
+  }
 }

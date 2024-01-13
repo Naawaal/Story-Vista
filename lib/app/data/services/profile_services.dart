@@ -37,6 +37,13 @@ class ProfileServices {
   late String? pdfUrl;
 
   /*
+    * This method is used to get the current user
+  */
+  User? getCurrentUser() {
+    return _auth.currentUser;
+  }
+
+  /*
     * This method is used to pick image from gallery
   */
   Future<String?> pickImage() async {

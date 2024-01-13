@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:story_vista/app/data/models/book_model.dart';
@@ -9,6 +10,11 @@ import '../../../data/services/splash_services.dart';
 import '../../../utils/snack_bar_util.dart';
 
 class ProfileController extends GetxController {
+  /*
+    * Instance of FirebaseAuth
+  */
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   /*
     * This is the instance of SplashServices.
   */
@@ -159,6 +165,13 @@ class ProfileController extends GetxController {
   */
   Stream<List<BookModel?>> getUserUploadedBooks() {
     return profileServices.getUserUploadedBook();
+  }
+
+  /*
+    * This method is used to get the current user data
+  */
+  User? getCurrentUser() {
+    return profileServices.getCurrentUser();
   }
 
   /*
