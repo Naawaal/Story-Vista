@@ -32,7 +32,10 @@ class ProfileView extends GetView<ProfileController> {
         onPressed: () async => Get.defaultDialog(
           radius: 08,
           cancel: TextButton(
-            onPressed: () => Get.back(),
+            onPressed: () {
+              Get.back();
+              controller.clearTextEditingControllers();
+            },
             child: const Text('Cancel'),
           ),
           confirm: TextButton(

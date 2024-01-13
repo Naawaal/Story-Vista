@@ -136,8 +136,9 @@ class ProfileController extends GetxController {
   */
   void uploadBookData() async {
     // Overriding the pdfPath.value with the pdfUrl returned from uploadPdf method
-    pdfPath.value = await profileServices.uploadPdf(File(pdfPath.value)) ?? '';
     if (validateBookData()) {
+      pdfPath.value =
+          await profileServices.uploadPdf(File(pdfPath.value)) ?? '';
       await profileServices.uploadBookData(
         bookModel: BookModel(
           id: DateTime.now().millisecondsSinceEpoch.toString(),
@@ -201,6 +202,7 @@ class ProfileController extends GetxController {
       bookTitleController,
       authorNameController,
       descriptionController,
+      aboutAuthorController,
       priceController,
       languageController,
       pagesController,
