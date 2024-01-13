@@ -49,7 +49,7 @@ class HomeNewReleaseListWidgetView extends GetView<HomeController> {
                             child: Image.network(
                               data[index]!.coverUrl.toString(),
                               fit: BoxFit.cover,
-                              height: Get.height * 0.14,
+                              height: Get.height * 0.10,
                               width: Get.width * 0.22,
                             ),
                           ),
@@ -89,23 +89,24 @@ class HomeNewReleaseListWidgetView extends GetView<HomeController> {
                                     color: Get.theme.colorScheme.onPrimary,
                                   ),
                                 ),
-                                Gap(Get.height * 0.002),
-                                Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                      size: 16,
-                                    ),
-                                    const Gap(2),
-                                    Text(
-                                      '4.5',
-                                      style: Get.textTheme.bodySmall!.copyWith(
-                                        color: Get.theme.colorScheme.onPrimary,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                //TODO flutter: uncomment this code to show rating
+                                // Gap(Get.height * 0.002),
+                                // Row(
+                                //   children: [
+                                //     const Icon(
+                                //       Icons.star,
+                                //       color: Colors.yellow,
+                                //       size: 16,
+                                //     ),
+                                //     const Gap(2),
+                                //     Text(
+                                //       '4.5',
+                                //       style: Get.textTheme.bodySmall!.copyWith(
+                                //         color: Get.theme.colorScheme.onPrimary,
+                                //       ),
+                                //     ),
+                                //   ],
+                                // ),
                               ],
                             ),
                           ),

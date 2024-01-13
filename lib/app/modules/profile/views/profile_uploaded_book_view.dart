@@ -82,23 +82,24 @@ class ProfileUploadedBookView extends GetView<ProfileController> {
                                   color: Get.theme.colorScheme.onPrimary,
                                 ),
                               ),
-                              Gap(Get.height * 0.002),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  const Gap(2),
-                                  Text(
-                                    '4.5',
-                                    style: Get.textTheme.bodySmall!.copyWith(
-                                      color: Get.theme.colorScheme.onPrimary,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // Todo flutter: uncomment this code when rating feature is implemented
+                              // Gap(Get.height * 0.002),
+                              // Row(
+                              //   children: [
+                              //     const Icon(
+                              //       Icons.star,
+                              //       color: Colors.yellow,
+                              //       size: 16,
+                              //     ),
+                              //     const Gap(2),
+                              //     Text(
+                              //       '4.5',
+                              //       style: Get.textTheme.bodySmall!.copyWith(
+                              //         color: Get.theme.colorScheme.onPrimary,
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                             ],
                           ),
                         ),
