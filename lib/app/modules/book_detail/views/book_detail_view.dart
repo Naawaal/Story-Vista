@@ -77,7 +77,8 @@ class BookDetailView extends GetView<BookDetailController> {
                   Get.toNamed(Routes.BOOK_VIEWER, arguments: controller.book),
             ),
           ),
-          Expanded(child: ButtonWidget(text: 'Play Audio', onPressed: () {})),
+          // Todo flutter: Uncomment this when the audio feature is ready
+          //Expanded(child: ButtonWidget(text: 'Play Audio', onPressed: () {})),
         ],
       ),
     );

@@ -56,7 +56,8 @@ class BookDetailHeaderWidgetView extends GetView<BookDetailController> {
             ),
           ),
           Gap(Get.height * 0.02),
-          const BookDetailWidgetView(),
+          // TODO Flutter: Uncomment this when the book detail feature is ready
+          // const BookDetailWidgetView(),
           Gap(Get.height * 0.01),
         ],
       ),
