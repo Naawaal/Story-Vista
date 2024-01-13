@@ -155,6 +155,13 @@ class ProfileController extends GetxController {
   }
 
   /*
+    * This method is used to get user uploaded books
+  */
+  Stream<List<BookModel?>> getUserUploadedBooks() {
+    return profileServices.getUserUploadedBook();
+  }
+
+  /*
     * This method is used sign-out the user
   */
   void signOut() async {

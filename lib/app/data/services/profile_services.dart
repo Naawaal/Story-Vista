@@ -111,6 +111,7 @@ class ProfileServices {
           .collection('Books')
           .doc(bookModel.id)
           .set(bookData.toJson());
+      await storeUserUploadedBook(bookData);
       return bookData;
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while uploading data');
@@ -150,5 +151,50 @@ class ProfileServices {
       SnackBarUtil.showErrorSnackBar('Error while uploading pdf');
     }
     return null;
+  }
+
+  /*
+    * This method is used to store user uploaded book into their own prviate collection
+  */
+  Future<void> storeUserUploadedBook(BookModel bookModel) async {
+    try {
+      final User? user = _auth.currentUser;
+      if (user != null) {
+        await _firestore
+            .collection('userBook')
+            .doc(user.uid)
+            .collection('Books')
+            .doc(bookModel.id)
+            .set(bookModel.toJson());
+      }
+    } catch (e) {
+      SnackBarUtil.showErrorSnackBar('Error while storing book');
+    }
+  }
+
+  /*
+    * This method is used to get user uploaded book from their own prviate collection
+  */
+  Stream<List<BookModel?>> getUserUploadedBook() {
+    // Get the current user uid
+    final User? user = _auth.currentUser;
+    // Path to the user uploaded book collection
+    final userBookRef = _firestore.collection('userBook').doc(user!.uid);
+    // Path to the book collection inside user uploaded book collection
+    final bookRef = userBookRef.collection('Books');
+    // Get the book collection data
+    return bookRef.snapshots().map((snapDocs) {
+      final document = snapDocs.docs;
+      List<BookModel> bookModel = [];
+      if (document.isNotEmpty) {
+        for (var doc in document) {
+          final data = doc.data();
+          bookModel.add(BookModel.fromJson(data));
+        }
+        return bookModel;
+      } else {
+        return bookModel;
+      }
+    });
   }
 }
