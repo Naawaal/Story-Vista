@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../routes/app_pages.dart';
 
 class HomeCustomAppBarWidgetView extends GetView {
-  const HomeCustomAppBarWidgetView({Key? key}) : super(key: key);
+  const HomeCustomAppBarWidgetView({super.key});
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -19,10 +19,10 @@ class HomeCustomAppBarWidgetView extends GetView {
         ),
       ),
       centerTitle: true,
-      leading: IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.dashboard, color: Get.theme.colorScheme.onPrimary),
-      ),
+      // leading: IconButton(
+      //   onPressed: () {},
+      //   icon: Icon(Icons.dashboard, color: Get.theme.colorScheme.onPrimary),
+      // ),
       actions: [
         IconButton(
           onPressed: () => Get.toNamed(Routes.PROFILE),

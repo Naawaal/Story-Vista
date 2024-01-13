@@ -28,7 +28,7 @@ class HomeTopWidgetView extends GetView<HomeController> {
               ),
               children: [
                 TextSpan(
-                  text: 'John',
+                  text: '${controller.getAllUsersData()!.displayName}',
                   style: Get.textTheme.bodyLarge!.copyWith(
                     color: Get.theme.colorScheme.onPrimary,
                     fontWeight: FontWeight.bold,

@@ -1,8 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:story_vista/app/data/models/book_model.dart';
 import 'package:story_vista/app/data/services/home_services.dart';
 
 class HomeController extends GetxController {
+  /*
+    * Instance of FirebaseAuth
+  */
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   /*
     * Instance of HomeServices
   */
@@ -52,4 +57,11 @@ class HomeController extends GetxController {
   */
   Stream<List<BookModel?>> get newReleaseBooks =>
       _homeServices.getAllUsersUploadedBooks();
+
+  /*
+    * Get the all users data
+  */
+  User? getAllUsersData() {
+    return _homeServices.getCurrentUser();
+  }
 }
