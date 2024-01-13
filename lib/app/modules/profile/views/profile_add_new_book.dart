@@ -122,14 +122,15 @@ class ProfileAddNewBook extends GetView<ProfileController> {
               hintText: "Language",
               iconData: Icons.language,
             ),
-            Gap(Get.height * 0.02),
-            TextFormFielComponent(
-              controller: controller.audioLengthController,
-              textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.text,
-              hintText: "Audio Length",
-              iconData: Icons.audiotrack,
-            ),
+            // Todo flutter : Uncomment this when the audio feature is ready
+            // Gap(Get.height * 0.02),
+            // TextFormFielComponent(
+            //   controller: controller.audioLengthController,
+            //   textInputAction: TextInputAction.done,
+            //   keyboardType: TextInputType.text,
+            //   hintText: "Audio Length",
+            //   iconData: Icons.audiotrack,
+            // ),
           ],
         ),
       ),
