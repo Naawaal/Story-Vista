@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
-import 'package:story_vista/app/modules/home/views/home_popular_list_widget_view.dart';
 
 import 'home_new_release_list_widget_view.dart';
 
@@ -20,7 +19,7 @@ class HomeBottomView extends GetView {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //TODO: Uncomment this when the popular feature is ready
+          //TODO Flutter: Uncomment this when the popular feature is ready
           // Text(
           //   'Popular',
           //   style: Get.textTheme.bodyMedium!.copyWith(

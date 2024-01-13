@@ -3,9 +3,6 @@ import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:story_vista/app/modules/home/controllers/home_controller.dart';
-import 'package:story_vista/app/modules/home/views/home_category_list_widget_view.dart';
-
-import 'home_search_bar_widget_view.dart';
 
 class HomeTopWidgetView extends GetView<HomeController> {
   const HomeTopWidgetView({super.key});
@@ -44,10 +41,10 @@ class HomeTopWidgetView extends GetView<HomeController> {
               color: Get.theme.colorScheme.onPrimary,
             ),
           ),
-          //TODO: Uncomment this when the search feature is ready
+          //TODO Flutter: Uncomment this when the search feature is ready
           // Gap(Get.height * 0.02),
           // const HomeSearchBarWidgetView(),
-          //TODO: Uncomment this when the categories feature is ready
+          //TODO Flutter: Uncomment this when the categories feature is ready
           // Gap(Get.height * 0.02),
           // Text(
           //   'Categories',
