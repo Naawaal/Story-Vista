@@ -1,6 +1,13 @@
 import 'package:get/get.dart';
+import 'package:story_vista/app/data/models/book_model.dart';
+import 'package:story_vista/app/data/services/home_services.dart';
 
 class HomeController extends GetxController {
+  /*
+    * Instance of HomeServices
+  */
+  final HomeServices _homeServices = HomeServices();
+
   /*
     * Creating a list of categories to be displayed in the home screen
     * The list is created using the Map data structure
@@ -39,4 +46,10 @@ class HomeController extends GetxController {
       "icon": "assets/icons/mystery.png",
     },
   ].obs;
+
+  /*
+    * Get the all users uploaded books from the HomeServices class
+  */
+  Stream<List<BookModel?>> get newReleaseBooks =>
+      _homeServices.getAllUsersUploadedBooks();
 }
