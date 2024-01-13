@@ -10,20 +10,17 @@ Welcome to StoryVista, your gateway to an expansive universe of stories. Dive in
 
 ## Run Locally
 
-Clone the project
+Clone the repository:
 
 ```bash
   git clone https://github.com/Naawaal/Story-Vista
+  cd Story-Vista
 ```
 
-Go to the project directory
+Open the project in Visual Studio Code:
 
 ```bash
-  cd my-project
-```
-
-```bash
-Open project in vs-code
+code .
 ```
 
 Install packages
