@@ -48,7 +48,7 @@ class ProfileServices {
       );
       if (pickedImage != null) {
         imageUrl = await uploadImage(File(pickedImage.path));
-        return pickedImage.path;
+        return imageUrl.toString();
       } else {
         SnackBarUtil.showErrorSnackBar('No image selected');
         return null;
@@ -71,8 +71,8 @@ class ProfileServices {
       if (result != null) {
         File file = File(result.files.first.path!);
         if (file.existsSync()) {
-          pdfUrl = await uploadPdf(file);
-          return pdfUrl.toString();
+          pdfUrl = File(result.files.first.path!).path;
+          return pdfUrl;
         } else {
           SnackBarUtil.showErrorSnackBar('No pdf selected');
         }
@@ -88,35 +88,29 @@ class ProfileServices {
   /*
     * This method is used upload data to firestore database
   */
-  Future<BookModel> uploadBookData({
-    required String id,
-    required String bookTitle,
-    required String authorName,
-    required String description,
-    required String price,
-    required String language,
-    required String pages,
-    required String audioLength,
-  }) async {
+  Future<BookModel> uploadBookData({required BookModel bookModel}) async {
     try {
       final bookData = BookModel(
-        id: id,
-        title: bookTitle,
-        description: description,
-        price: price,
-        language: language,
-        pages: int.tryParse(pages) ?? 0,
-        author: authorName,
-        image: '',
-        aboutAuthor: '',
+        id: bookModel.id,
+        title: bookModel.title,
+        description: bookModel.description,
+        price: bookModel.price,
+        language: bookModel.language,
+        pages: bookModel.pages,
+        author: bookModel.author,
+        image: bookModel.image,
+        aboutAuthor: bookModel.aboutAuthor,
         audioBook: '',
-        audioLen: audioLength,
-        coverUrl: imageUrl,
-        category: 'Isekai',
-        pdfUrl: pdfUrl,
-        year: DateTime.now().year,
+        audioLen: bookModel.audioLen,
+        coverUrl: bookModel.coverUrl,
+        category: bookModel.category,
+        pdfUrl: bookModel.pdfUrl,
+        year: bookModel.year,
       );
-      await _firestore.collection('Books').doc(id).set(bookData.toJson());
+      await _firestore
+          .collection('Books')
+          .doc(bookModel.id)
+          .set(bookData.toJson());
       return bookData;
     } catch (e) {
       SnackBarUtil.showErrorSnackBar('Error while uploading data');

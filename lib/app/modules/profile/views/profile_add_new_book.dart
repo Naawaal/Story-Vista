@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -27,8 +25,8 @@ class ProfileAddNewBook extends GetView<ProfileController> {
                   borderRadius: BorderRadius.circular(08),
                   image: controller.imagePath.value.isNotEmpty
                       ? DecorationImage(
-                          image: FileImage(
-                            File(controller.imagePath.value),
+                          image: NetworkImage(
+                            controller.imagePath.value,
                           ),
                           fit: BoxFit.cover,
                         )
