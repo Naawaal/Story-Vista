@@ -6,21 +6,32 @@ Welcome to StoryVista, your gateway to an expansive universe of stories. Dive in
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://i.postimg.cc/cJ1bC9GT/IMG-20240113-180822.jpg)
+
+![App Screenshot](https://i.postimg.cc/Wpdx0HFH/IMG-20240113-180656.jpg)
+
+![App Screenshot](https://i.postimg.cc/CLDtQn4C/IMG-20240113-180711.jpg)
+
+![App Screenshot](https://i.postimg.cc/YCHVK2X5/IMG-20240113-180804.jpg)
+
+![App Screenshot](https://i.postimg.cc/7LBQ23x4/IMG-20240113-182753.jpg)
 
 ## Run Locally
 
-Clone the repository:
+Clone the repository
 
 ```bash
   git clone https://github.com/Naawaal/Story-Vista
+```
+
+```bash
   cd Story-Vista
 ```
 
-Open the project in Visual Studio Code:
+Open project in vs-code
 
 ```bash
-code .
+    code .
 ```
 
 Install packages
@@ -43,7 +54,7 @@ Run the app
 - Profile
 - Upload Book
 
-## Packages used cupertino_icons: ^1.0.2
+## Packages used
 
 - cupertino_icons: ^1.0.2
 - get: 4.6.6
@@ -62,7 +73,3 @@ Run the app
 ## Authors
 
 - [@Naawaal](https://github.com/Naawaal)
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
