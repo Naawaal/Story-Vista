@@ -3,7 +3,10 @@ import 'package:story_vista/app/utils/app_color_util.dart';
 
 class AppThemeUtil {
   AppThemeUtil._();
-
+  /*
+    * Light Theme Data for the app 
+    * This theme is used for the light mode of the app 
+    */
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     appBarTheme: const AppBarTheme(

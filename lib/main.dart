@@ -20,7 +20,7 @@ Future<void> main() async {
       debugShowCheckedModeBanner: false,
       smartManagement: SmartManagement.full,
       theme: AppThemeUtil.lightTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       darkTheme: AppThemeUtil.lightTheme,
     ),
   );
