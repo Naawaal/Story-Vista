@@ -41,9 +41,10 @@ Run the app
 ## Features
 
 - Light Mode
-- New Release Section
-- Fullscreen mode
-- Cross platform
+- Sign-in With Goolge
+- New Release
+- Profile
+- Upload Book
 
 ## Authors
 
