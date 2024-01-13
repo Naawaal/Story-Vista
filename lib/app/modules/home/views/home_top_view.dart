@@ -44,17 +44,19 @@ class HomeTopWidgetView extends GetView<HomeController> {
               color: Get.theme.colorScheme.onPrimary,
             ),
           ),
-          Gap(Get.height * 0.02),
-          const HomeSearchBarWidgetView(),
-          Gap(Get.height * 0.02),
-          Text(
-            'Categories',
-            style: Get.textTheme.labelLarge!.copyWith(
-              color: Get.theme.colorScheme.onPrimary,
-            ),
-          ),
-          Gap(Get.height * 0.01),
-          const HomeCategoryListWidgetView(),
+          //TODO: Uncomment this when the search feature is ready
+          // Gap(Get.height * 0.02),
+          // const HomeSearchBarWidgetView(),
+          //TODO: Uncomment this when the categories feature is ready
+          // Gap(Get.height * 0.02),
+          // Text(
+          //   'Categories',
+          //   style: Get.textTheme.labelLarge!.copyWith(
+          //     color: Get.theme.colorScheme.onPrimary,
+          //   ),
+          // ),
+          // Gap(Get.height * 0.01),
+          // const HomeCategoryListWidgetView(),
           Gap(Get.height * 0.01),
         ],
       ),

@@ -20,14 +20,15 @@ class HomeBottomView extends GetView {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Popular',
-            style: Get.textTheme.bodyMedium!.copyWith(
-              color: Get.theme.colorScheme.onSurface,
-            ),
-          ),
-          Gap(Get.height * 0.01),
-          const HomePopularListWidgetView(),
+          //TODO: Uncomment this when the popular feature is ready
+          // Text(
+          //   'Popular',
+          //   style: Get.textTheme.bodyMedium!.copyWith(
+          //     color: Get.theme.colorScheme.onSurface,
+          //   ),
+          // ),
+          // Gap(Get.height * 0.01),
+          // const HomePopularListWidgetView(),
           Text(
             'New Releases',
             style: Get.textTheme.bodyMedium!.copyWith(

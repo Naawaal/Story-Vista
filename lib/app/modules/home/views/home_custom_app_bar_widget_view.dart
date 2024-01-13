@@ -19,6 +19,7 @@ class HomeCustomAppBarWidgetView extends GetView {
         ),
       ),
       centerTitle: true,
+      // TODO: Uncomment this when the dashboard feature is ready
       // leading: IconButton(
       //   onPressed: () {},
       //   icon: Icon(Icons.dashboard, color: Get.theme.colorScheme.onPrimary),
